@@ -1,0 +1,169 @@
+<!DOCTYPE>
+<html en ng-app="agyaelar">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>AgYaeLar?</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/ionicons.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <div ng-controller="searchcontrol">
+      <div id="h">
+        <div class="logo">
+          <a href="index.html"><img src="assets/img/header_logo.png" alt="logo"></a>
+        </div>
+        <!-- header social hidden-x(default)-->
+        <div class="years" >
+          <a href="first.html">FIRST</a>
+          <a href="#">SECOND</a>
+          <a href="#">THIRD</a>
+          <a href="#">FOURTH</a>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 centered">
+              <img src="assets/img/main_logo.png" alt="logo">
+              <div class="row" style="margin-top:50px;">
+                <div class="group col-lg-4 col-lg-offset-3">
+                  <input type="text" required ng-model="roll_no">
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Enter Roll No.</label>
+                </div>
+                <div class="col-lg-2" style="margin:10px;">
+                  <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal" ng-click="find(roll_no)" ng-required="required">
+                    Find
+                  </button>
+                </div>
+                <div class="col-lg-4 col-lg-offset-4">
+                  <a href="" style="color:white;" data-toggle="modal" data-target="#tipModal"><u>Tip?</u></a>
+                </div>
+              </div>
+            </div>
+          </div><!--/row-->
+        </div><!--/container-->
+      </div><!-- /h -->
+
+    <!-- Modal Matter-->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog" style="width:1000px; margin-top:200px;">
+        <div class="modal-content">
+          <div class="modal-header yzeecolor">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" style="color:white;">&times;</span>
+            </button>
+            <b><h3 class="modal-title" style="text-align:center;color:white;">Congratulations, You Passed All Subjects!</h3></b>
+          </div>
+          <div class="modal-body yzeetable" style="padding:40px 50px;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Roll No.</th>
+                  <th>Name</th>
+                  <th id="th1">Subject 1</th>
+                  <th id="th2">Subject 2</th>
+                  <th id="th3">Subject 3</th>
+                  <th id="th4">Subject 4</th>
+                  <th id="th5">Subject 5</th>
+                  <th id="th6">Subject 6</th>
+                  <th id="th7">Subject 7</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="student in allyears">
+                  <td>{{student.roll_no}}</td>
+                  <td>{{student.name}}</td>
+                  <td>{{student.sub1}}</td>
+                  <td>{{student.sub2}}</td>
+                  <td>{{student.sub3}}</td>
+                  <td>{{student.sub4}}</td>
+                  <td>{{student.sub5}}</td>
+                  <td>{{student.sub6}}</td>
+                  <td>{{student.sub7}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div> <!-- Modal Body END -->
+          <div class="modal-footer yzeetable">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div> <!-- Modal Footer END -->
+        </div>
+      </div>
+    </div>
+    <!-- Modal Matter End -->
+
+    <!-- Tip Modal Matter-->
+    <div class="modal fade" id="tipModal" role="dialog">
+      <div class="modal-dialog" style="width:1000px; margin-top:200px;">
+        <div class="modal-content">
+          <div class="modal-header yzeecolor">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" style="color:white;">&times;</span>
+            </button>
+            <b><h3 class="modal-title" style="text-align:center;color:white;">Tips for Roll No.</h3></b>
+          </div>
+          <div class="modal-body yzeetable" style="padding:40px 50px;">
+          <div style="text-align:center">
+            <h4>First Year : Eg. <b class="yzeecolor" style="color:white;">1CST-1</b></h4>
+            <h4>Second Year : Eg. <b class="yzeecolor" style="color:white;">2CST-1</b></h4>
+            <h4>Third Year : Eg. <b class="yzeecolor" style="color:white;">3CS-1, 3CT</b></h4>
+            <h4>Fourth Year : Eg. <b class="yzeecolor" style="color:white;">4SE-1, 4ES-1, etc.</b></h4>
+          </div>
+          </div> <!-- Modal Body END -->
+          <div class="modal-footer yzeetable">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div> <!-- Modal Footer END -->
+        </div>
+      </div>
+    </div>
+    <!-- Tip? Modal Matter End -->
+  </div> <!-- controller End -->
+
+    <!-- footer -->
+    <div id="f">
+      <div class="container">
+        <div class="row centered">
+          <h2>MADE WITH</h2>
+          <h5>Love, Effort, Google.com</h5>
+          <h6>&amp;</h6>
+          <img src="assets/img/mean_logos.png" alt="logos"></img>
+
+          <h6 class="mt">COPYRIGHT 2016 : AUNGYAELAR?</h6>
+        </div><!--/row-->
+      </div><!--/container-->
+    </div><!--/F-->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Chart.js -->
+  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <!-- Angular.js -->
+  	<script src="assets/js/angular.min.js"></script>
+    <!-- controller -->
+  	<script src="controllers/controller.js" type="text/javascript"></script>
+
+  	<!-- Angular Material requires Angular.js Libraries
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script> -->
+
+    <script src="assets/js/retina-1.1.0.js"></script>
+
+  </body>
+</html>
